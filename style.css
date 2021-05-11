@@ -53,7 +53,7 @@ header > h1 {
     font-family: Asap, sans-serif;
 }
 .choices{
-    margin: 50px 0;
+    margin-top: 50px;
     text-align: center;
 }
 .choice {
@@ -70,4 +70,12 @@ header > h1 {
 .choice:hover{
     cursor: pointer;
     background-color: #0d0e11;
+}
+#action-message{
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Asap, sans-serif;
+    margin-top: 20px;
 }
