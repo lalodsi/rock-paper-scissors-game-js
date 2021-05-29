@@ -1,5 +1,5 @@
-const userScore = 0;
-const computerScore = 0;
+let userScore = 0;
+let computerScore = 0;
 
 //Capturando el DOM
 
@@ -18,28 +18,35 @@ function getComputerChoice(){
     return choices[numeroAleatorio];
 }
 
+function win() {
+    userScore++;
+    console.log("Win! user score: " + userScore);
+}
+function lose() {
+    computerScore++;
+    console.log("Lose! computer score: " + computerScore);
+}
+function draw() {
+    console.log('Its a draw');
+}
+
 function Game (userChoice){
-    /*
-    generar un eleemento aleatorio ( r p t )
-    comparar con la eleccion del usuario
-    asignamos los puntos al usuario o a la computadora
-    */
     const computerChoice = getComputerChoice();
     switch (userChoice + computerChoice){
         case 'rs':
         case 'sp':
         case 'pr':
-            console.log('You win!');
+            win();
             break;
         case 'rp':
         case 'ps':
         case 'sr':
-            console.log('Computer Win!')
+            lose();
             break;
         case 'rr':
         case 'pp':
         case 'ss':
-            console.log('It is a draw')
+            draw();
             break;
         default:
             console.log('Error')
