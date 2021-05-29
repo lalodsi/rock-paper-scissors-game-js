@@ -11,3 +11,27 @@ const result_div = document.querySelector(".result");
 const rock_div      = document.getElementById("r");
 const paper_div     = document.getElementById("p");
 const scissors_div  = document.getElementById("s");
+
+function Game (userChoice){
+    /*
+    generar un eleemento aleatorio ( r p t )
+    comparar con la eleccion del usuario
+    asignamos los puntos al usuario o a la computadora
+    */
+}
+
+function main(){
+    rock_div.addEventListener('click', function() {
+        Game('piedra')
+    })
+
+    paper_div.addEventListener('click', function() {
+        Game('papel')
+    })
+
+    scissors_div.addEventListener('click', function() {
+        Game('tijeras')
+    })
+}
+
+main();
