@@ -6,7 +6,7 @@ let computerScore = 0;
 const userScore_span = document.getElementById('user-score');
 const computerScore_span = document.getElementById('computer-score');
 const scoreBoard_div = document.querySelector('.score-board')
-const result_div = document.querySelector(".result");
+const result_p = document.querySelector(".result > p");
 
 const rock_div      = document.getElementById("r");
 const paper_div     = document.getElementById("p");
@@ -23,17 +23,30 @@ function modificarHTML() {
     computerScore_span.innerHTML = computerScore;
 }
 
-function win() {
+function convertir(eleccion) {
+    switch (eleccion){
+        case 'r':
+            return 'piedra';
+        case 'p':
+            return 'papel';
+        case 's':
+            return 'tijeras';
+    }
+}
+
+function win(user, computer) {
     userScore++;
     modificarHTML();
-
+    result_p.innerHTML = convertir(user) + ' es mejor que ' + convertir(computer) + ', tu ganas!';
 }
-function lose() {
+function lose(user, computer) {
     computerScore++;
     modificarHTML();
+    result_p.innerHTML = convertir(user) + ' es peor que ' + convertir(computer) + ', tu pierdes!';
 }
-function draw() {
+function draw(user, computer) {
     modificarHTML();
+    result_p.innerHTML = convertir(user) + ' es igual que ' + convertir(computer) + ', es un empate!';
 }
 
 function Game (userChoice){
@@ -42,17 +55,17 @@ function Game (userChoice){
         case 'rs':
         case 'sp':
         case 'pr':
-            win();
+            win(userChoice, computerChoice);
             break;
         case 'rp':
         case 'ps':
         case 'sr':
-            lose();
+            lose(userChoice, computerChoice);
             break;
         case 'rr':
         case 'pp':
         case 'ss':
-            draw();
+            draw(userChoice, computerChoice);
             break;
         default:
             console.log('Error')
