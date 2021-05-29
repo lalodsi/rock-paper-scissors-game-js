@@ -24,19 +24,40 @@ function Game (userChoice){
     comparar con la eleccion del usuario
     asignamos los puntos al usuario o a la computadora
     */
+    const computerChoice = getComputerChoice();
+    switch (userChoice + computerChoice){
+        case 'rs':
+        case 'sp':
+        case 'pr':
+            console.log('You win!');
+            break;
+        case 'rp':
+        case 'ps':
+        case 'sr':
+            console.log('Computer Win!')
+            break;
+        case 'rr':
+        case 'pp':
+        case 'ss':
+            console.log('It is a draw')
+            break;
+        default:
+            console.log('Error')
+            break;
+    }
 }
 
 function main(){
     rock_div.addEventListener('click', function() {
-        Game('piedra')
+        Game('r')
     })
 
     paper_div.addEventListener('click', function() {
-        Game('papel')
+        Game('p')
     })
 
     scissors_div.addEventListener('click', function() {
-        Game('tijeras')
+        Game('s')
     })
 }
 
