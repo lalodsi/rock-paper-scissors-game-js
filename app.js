@@ -4,7 +4,7 @@ let computerScore = 0;
 //Capturando el DOM
 
 const userScore_span = document.getElementById('user-score');
-const computarScore_span = document.getElementById('computer-score');
+const computerScore_span = document.getElementById('computer-score');
 const scoreBoard_div = document.querySelector('.score-board')
 const result_div = document.querySelector(".result");
 
@@ -18,16 +18,22 @@ function getComputerChoice(){
     return choices[numeroAleatorio];
 }
 
+function modificarHTML() {
+    userScore_span.innerHTML = userScore;
+    computerScore_span.innerHTML = computerScore;
+}
+
 function win() {
     userScore++;
-    console.log("Win! user score: " + userScore);
+    modificarHTML();
+
 }
 function lose() {
     computerScore++;
-    console.log("Lose! computer score: " + computerScore);
+    modificarHTML();
 }
 function draw() {
-    console.log('Its a draw');
+    modificarHTML();
 }
 
 function Game (userChoice){
