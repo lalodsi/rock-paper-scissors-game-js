@@ -17,25 +17,26 @@
     <div class="score-board">
         <div id="user-label" class="badge">User</div>
         <div id="computer-label" class="badge">Comp</div>
-        <span>0</span>:<span>0</span>
+        <span class="userScore">0</span>:<span class="computerScore">0</span>
     </div>
 
     <div class="result">
-        <p>Welcome to the Rock, Paper, Scissors game</p>
+        <p id="result">Welcome to the Rock, Paper, Scissors game</p>
     </div>
 
     <div class="choices">
-        <div class="choice">
+        <div class="choice" id="r">
             <img src="./images/rock.png" alt="rock hand" >
         </div>
-        <div class="choice">
+        <div class="choice" id="p">
             <img src="./images/paper.png" alt="paper hand" >
         </div>
-        <div class="choice">
+        <div class="choice" id="s">
             <img src="./images/scissors.png" alt="scissors hand" >
         </div>
     </div>
 
     <p id="action-message">Make your move</p>
+    <script src="app.js" ></script>
 </body>
 </html>
